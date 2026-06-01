@@ -1,16 +1,16 @@
-# nicons
+# @nolly-cafe/icons
 
 > Typed React SVG icon components. "bring your own icons."
 
-`nicons` provides the primitive to build and ship your own fully typed, tree-shaken React icon components. No bundled icons (yet). No opinions on what your icons look like. This is just the infrastructure to build your own icon library.
+`@nolly-cafe/icons` provides the primitive to build and ship your own fully typed, tree-shaken React icon components. No bundled icons (yet). No opinions on what your icons look like. This is just the infrastructure to build your own icon library.
 
 ## Installation
 
 ```bash
-npm install nicons
-# pnpm add nicons
-# yarn add nicons
-# bun add nicons
+npm install @nolly-cafe/icons
+# pnpm add @nolly-cafe/icons
+# yarn add @nolly-cafe/icons
+# bun add @nolly-cafe/icons
 ```
 
 **Peer dependency:** React 17 or later.
@@ -23,8 +23,8 @@ npm install nicons
 ```tsx
 // src/icons/france-flag.tsx
 import React from 'react'
-import { createIcon } from 'nicons'
-import type { Icon, IconNode, IconProps } from 'nicons'
+import { createIcon } from '@nolly-cafe/icons'
+import type { Icon, IconNode, IconProps } from '@nolly-cafe/icons'
 
 /**
  * @component @name FranceFlag
@@ -33,7 +33,7 @@ import type { Icon, IconNode, IconProps } from 'nicons'
  * @returns {JSX.Element} JSX Element
  */
 export const __iconNode: IconNode = [
-  ['path', { fill: '#000091', d: 'M0 0h213.3v480H0z',     key: 'fr-blue'  }],
+  ['path', { fill: '#000091', d: 'M0 0h213.3v480H0z',        key: 'fr-blue'  }],
   ['path', { fill: '#fff',    d: 'M213.3 0h213.4v480H213.3z', key: 'fr-white' }],
   ['path', { fill: '#e1000f', d: 'M426.7 0H640v480H426.7z',   key: 'fr-red'   }],
 ]
@@ -47,6 +47,7 @@ FranceFlag.displayName = 'FranceFlag'
 
 export { FranceFlag as default, FranceFlag as FranceFlagIcon }
 ```
+
 2. Use it
 ```tsx
 import { FranceFlag } from './icons/france-flag'
@@ -68,7 +69,7 @@ export function App() {
 `createIcon(displayName, iconNode)`  
 Creates a typed React Icon component from an IconNode tree.
 ```ts
-import { createIcon } from 'nicons'
+import { createIcon } from '@nolly-cafe/icons'
 
 const _Base = createIcon('MyIcon', iconNode)
 ```
@@ -85,6 +86,7 @@ Returns an `Icon`, a `React.ForwardRefExoticComponent` accepting all `IconProps`
 `IconProps`
 
 Every icon component accepts all standard `SVGAttributes<SVGElement>` plus these extras:
+
 | Prop                  | Type               | Default | Description                                                                                            |
 | --------------------- | ------------------ | ------- | ------------------------------------------------------------------------------------------------------ |
 | `size`                | `number \| string` | `24`    | Sets both `width` and `height` on the SVG                                                              |
@@ -127,7 +129,7 @@ Hyphenated SVG attributes (`stroke-linecap`, `fill-rule`, `clip-path`, etc.) are
 ### Types
 
 ```ts
-import type { Icon, IconNode, IconNodeChild, IconProps } from 'nicons'
+import type { Icon, IconNode, IconNodeChild, IconProps } from '@nolly-cafe/icons'
 ```
 
 | Type            | Description                                |
@@ -145,8 +147,8 @@ import type { Icon, IconNode, IconNodeChild, IconProps } from 'nicons'
 
 ```tsx
 import React from 'react'
-import { createIcon } from 'nicons'
-import type { Icon, IconNode, IconProps } from 'nicons'
+import { createIcon } from '@nolly-cafe/icons'
+import type { Icon, IconNode, IconProps } from '@nolly-cafe/icons'
 
 export const __iconNode: IconNode = [
   ['circle', { cx: '12', cy: '12', r: '10', key: 'circle' }],
@@ -212,7 +214,7 @@ When rendering at non-standard sizes, set `absoluteStrokeWidth` to keep the stro
 
 ## Generating icons
 
-The [SVG Icon Maker](https://thenolle.github.io/nicons) tool converts any `.svg` file into a `nicons`-compatible `.tsx` component automatically, including `viewBox` detection, `stroke`/`fill` mode detection, and correct `key` attributes.
+The [SVG Icon Maker](https://thenolle.github.io/nicons) tool converts any `.svg` file into a `@nolly-cafe/icons`-compatible `.tsx` component automatically, including `viewBox` detection, `stroke`/`fill` mode detection, and correct `key` attributes.
 
 ---
 

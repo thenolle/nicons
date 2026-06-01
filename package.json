@@ -1,5 +1,5 @@
 {
-  "name": "nicons",
+  "name": "@nolly-cafe/icons",
   "version": "0.1.0",
   "description": "Typed React SVG icon components. \"bring your own icons.\"",
   "author": "Nolly",
